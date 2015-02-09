@@ -5,6 +5,10 @@
   "author": "Magnus Ljadas",
   "main": "bin/telldus2graphite",
   "preferGlobal": "true",
+  "directories": {
+    "bin": "./bin",
+    "lib": "./lib"
+  },
   "bin": {
     "telldus2graphite" : "./bin/telldus2graphite.js"
   },
