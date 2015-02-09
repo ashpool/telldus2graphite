@@ -11,7 +11,8 @@ Fetches sensor values from Telldus Live and forwards them to Graphite.
 [2015-02-09 20:19:38.287] [INFO] lib/graphite.js - logged { 'temp.outhouse': '8.7' } Mon Feb 09 2015 20:17:51 GMT+0100 (CET)
 [2015-02-09 20:19:38.287] [INFO] bin/telldus2graphite.js -  5 sensors done in 768 ms
 ```
-
+![screen shot 2015-02-09 at 20 23 13](https://cloud.githubusercontent.com/assets/310634/6113754/cd9939de-b099-11e4-8073-4aa46b5b2b7c.png)
+![screen shot 2015-02-09 at 20 21 41](https://cloud.githubusercontent.com/assets/310634/6113755/cd997886-b099-11e4-9088-2c4fdedcd699.png)
 
 ## Install
 ```
