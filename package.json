@@ -2,12 +2,19 @@
   "name": "telldusjs",
   "version": "0.0.1",
   "description": "Fetches sensor values from Telldus Live and forwards them to Graphite",
-  "main": "server.js",
-  "bin": "./server.js",
+  "author": "Magnus Ljadas",
+  "main": "lib/telldus2graphite",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ashpool/homejs.git"
+    "url": "git://github.com/ashpool/telldus2graphite.git"
   },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "keywords": [
+    "telldus",
+    "graphite"
+  ],
   "dependencies": {
     "graphite": "git://github.com/ashpool/node-graphite.git#master",
     "lodash": "^3.1.0",
