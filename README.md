@@ -24,7 +24,10 @@ npm install git://github.com/ashpool/telldus2graphite.git#master
 
 
 # Usage
-``crontab -e``
+```
+crontab -e
+```
+
 Add this line to update sensors every minute
 ```
 * * * * * node /<path to>/node_modules/.bin/telldus2graphite
