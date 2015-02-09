@@ -9,7 +9,7 @@
     "url": "git://github.com/ashpool/telldus2graphite.git"
   },
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 0.8.0"
   },
   "keywords": [
     "telldus",
