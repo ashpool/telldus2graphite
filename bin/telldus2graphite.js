@@ -3,12 +3,12 @@
  This script is typically run as a cron job
  */
 var RSVP = require('rsvp'),
-	home = require('./homepath'),
+	home = require('./../lib/homepath'),
 	config = require(home.path() + '/.telldus2graphite/config.json'),
-	telldus = require('./telldus.js'),
-	graphite = require('./graphite.js'),
+	telldus = require('./../lib/telldus.js'),
+	graphite = require('./../lib/graphite.js'),
 	_ = require('lodash'),
-	logger = require('./logger').getLogger(__filename),
+	logger = require('./../lib/logger').getLogger(__filename),
 	graphiteClient = graphite(config),
 	telldusClient = telldus(config),
 	start = new Date().getTime();

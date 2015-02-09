@@ -6,7 +6,7 @@
   "main": "lib/telldus2graphite",
   "preferGlobal": "true",
   "bin": {
-    "telldus2graphite" : "lib/telldus2graphite.js"
+    "telldus2graphite" : "./lib/telldus2graphite.js"
   },
   "repository": {
     "type": "git",
