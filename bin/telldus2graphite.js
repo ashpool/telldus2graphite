@@ -1,4 +1,3 @@
-#!/usr/local/bin/node
 /*
  This script is typically run as a cron job
  */
