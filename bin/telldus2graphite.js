@@ -1,5 +1,5 @@
 /*
- This script is typically run as a cron job
+ Typically invoked by cron.
  */
 var RSVP = require('rsvp'),
 	home = require('./../lib/homepath'),
@@ -10,7 +10,7 @@ var RSVP = require('rsvp'),
 	start = new Date().getTime();
 
 RSVP.on('error', function (reason) {
-	logger.error(reason);
+	logger.debug(reason);
 });
 
 function printSummary (metrics) {
