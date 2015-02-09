@@ -4,7 +4,7 @@ Fetches sensor values from Telldus Live and forwards them to Graphite.
 
 ## Install
 ```
-npm install git://github.com/ashpool/telldus2graphite.git#master
+npm install telldus2graphite
 ```
 
 ## Setup
