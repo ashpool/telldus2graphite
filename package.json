@@ -30,7 +30,10 @@
     "rsvp": "^3.0.16",
     "telldus-live": "^0.2.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jshint": "^1.9.2"
+  },
   "bugs": {
     "url": "https://github.com/ashpool/telldus2graphite/issues"
   },
