@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "description": "Fetches sensor values from Telldus Live and forwards them to Graphite",
   "author": "Magnus Ljadas",
-  "main": "lib/telldus2graphite",
+  "main": "bin/telldus2graphite",
   "preferGlobal": "true",
   "bin": {
-    "telldus2graphite" : "./lib/telldus2graphite.js"
+    "telldus2graphite" : "./bin/telldus2graphite.js"
   },
   "repository": {
     "type": "git",
