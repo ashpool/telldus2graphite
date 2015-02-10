@@ -1,7 +1,7 @@
 # telldus2graphite
 Fetches sensor values from Telldus Live and forwards them to Graphite.
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Support us][gittip-image]]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
 
 
 ```
@@ -54,3 +54,8 @@ Add this line to update sensors every minute
 ```
 * * * * * node /<path to>/node_modules/.bin/telldus2graphite
 ```
+
+[downloads-image]: http://img.shields.io/npm/dm/gulp.svg
+[npm-url]: https://npmjs.org/package/gulp
+[npm-image]: http://img.shields.io/npm/v/gulp.svg
+
