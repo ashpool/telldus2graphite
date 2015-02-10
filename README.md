@@ -55,7 +55,7 @@ Add this line to update sensors every minute
 * * * * * node /<path to>/node_modules/.bin/telldus2graphite
 ```
 
-[downloads-image]: http://img.shields.io/npm/dm/gulp.svg
-[npm-url]: https://npmjs.org/package/gulp
-[npm-image]: http://img.shields.io/npm/v/gulp.svg
+
+[npm-url]: https://npmjs.org/package/telldus2graphite
+[npm-image]: https://img.shields.io/npm/dm/telldus2graphite.svg
 
