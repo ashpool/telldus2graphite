@@ -1,6 +1,9 @@
 # telldus2graphite
 Fetches sensor values from Telldus Live and forwards them to Graphite.
 
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Support us][gittip-image]]
+
+
 ```
 [2015-02-09 20:19:38.263] [WARN] lib/telldus.js - lowerattic too old Mon Feb 09 2015 20:06:33 GMT+0100 (CET)
 [2015-02-09 20:19:38.263] [WARN] lib/telldus.js - upperattic too old Mon Feb 09 2015 20:09:20 GMT+0100 (CET)
