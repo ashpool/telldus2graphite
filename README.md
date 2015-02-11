@@ -50,7 +50,7 @@ npm install telldus2graphite
 * ``sensor.type => freezer.temp``
 
 
-# Usage
+## Usage
 ```
 crontab -e
 ```
