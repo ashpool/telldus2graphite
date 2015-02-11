@@ -41,32 +41,50 @@ describe('telldus', function () {
 	});
 
 	describe('#getSensors()', function () {
-		it('returns an array of sensors - if everything works fine', function (done) {
-			var telldusAPI = {
-				getSensors: function (cb) {
-					return cb(null, sensors);
-				}
-			};
-			var telldus = require('../lib/telldus')(telldusAPI);
-			telldus.getSensors().then(function (value) {
-				assert.equal(value, sensors);
-				done();
+		describe('success', function () {
+			it('returns an array of sensors - if everything works fine', function (done) {
+				var telldusAPI = {
+					getSensors: function (cb) {
+						return cb(null, sensors);
+					}
+				};
+				var telldus = require('../lib/telldus')(telldusAPI);
+				telldus.getSensors().then(function (value) {
+					assert.equal(value, sensors);
+					done();
+				});
 			});
 		});
-		it('handles failure - if the API fails', function (done) {
-			var telldusAPI = {
-				getSensors: function (cb) {
-					var err = {};
-					err.message = 'failure';
-					return cb(err, sensors);
-				}
-			};
-			var telldus = require('../lib/telldus')(telldusAPI);
-			telldus.getSensors().then(function (value) {
-				assert.fail(value);
-			}).catch(function (rejection) {
-				assert.equal(rejection, 'failure');
-				done();
+		describe('failure', function () {
+			it('forwards error message', function (done) {
+				var telldusAPI = {
+					getSensors: function (cb) {
+						var err = {};
+						err.message = 'failure';
+						return cb(err, sensors);
+					}
+				};
+				var telldus = require('../lib/telldus')(telldusAPI);
+				telldus.getSensors().then(function (value) {
+					assert.fail(value);
+				}).catch(function (rejection) {
+					assert.equal(rejection, 'failure');
+					done();
+				});
+			});
+			it('handles empty error message', function (done) {
+				var telldusAPI = {
+					getSensors: function (cb) {
+						return cb({}, sensors);
+					}
+				};
+				var telldus = require('../lib/telldus')(telldusAPI);
+				telldus.getSensors().then(function (value) {
+					assert.fail(value);
+				}).catch(function (rejection) {
+					assert.equal(rejection, 'failed for unknown reasons');
+					done();
+				});
 			});
 		});
 	});
