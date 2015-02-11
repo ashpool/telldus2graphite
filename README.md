@@ -44,7 +44,7 @@ npm install telldus2graphite
 
 ```
 
-## Formatting
+### Formatting
 * ``client.sensor.type => home.freezer.temp`` (default)
 * ``client.type.sensor => home.temp.freezer``
 * ``sensor.type => freezer.temp``
