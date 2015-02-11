@@ -1,6 +1,6 @@
 {
   "name": "telldus2graphite",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Fetches sensor values from Telldus Live and forwards them to Graphite",
   "author": "Magnus Ljadas",
   "main": "bin/telldus2graphite",
@@ -39,6 +39,7 @@
     "telldus-live": "^0.2.1"
   },
   "devDependencies": {
+    "chai": "^1.10.0",
     "gulp": "^3.8.10",
     "gulp-jshint": "^1.9.2",
     "gulp-mocha": "^2.0.0"

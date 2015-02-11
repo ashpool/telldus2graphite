@@ -1,2 +1,2 @@
 require('./telldus.js');
-require('./logformatter');
+require('./metric.js');
