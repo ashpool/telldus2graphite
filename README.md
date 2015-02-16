@@ -39,7 +39,8 @@ npm install telldus2graphite
   "telldusToken": "...",
   "telldusTokenSecret": "...",
   "graphiteUrl": "plaintext://127.0.0.1:2003/",
-  "format": "client.sensor.type"
+  "format": "client.sensor.type",
+  "logLevel": "INFO"
 }
 
 ```
