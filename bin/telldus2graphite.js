@@ -24,7 +24,7 @@ var telldusAPI = new TelldusAPI.TelldusAPI({
 	}).on('error', function (err) {
 		logger.error('background error: ', err.message);
 	}),
-	telldus = require('./../lib/telldus.js')(telldusAPI);
+	telldus = require('./../lib/telldus.js')(telldusAPI, config);
 
 
 function printSummary (metrics) {

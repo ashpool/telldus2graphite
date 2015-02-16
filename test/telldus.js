@@ -48,7 +48,7 @@ describe('telldus', function () {
 						return cb(null, sensors);
 					}
 				};
-				var telldus = require('../lib/telldus')(telldusAPI);
+				var telldus = require('../lib/telldus')(telldusAPI, {});
 				telldus.getSensors().then(function (value) {
 					assert.equal(value, sensors);
 					done();
