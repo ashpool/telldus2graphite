@@ -26,11 +26,4 @@ var telldusAPI = new TelldusAPI.TelldusAPI({
 	}),
 	telldus = require('./../lib/telldus.js')(telldusAPI, config);
 
-
-function printSummary (metrics) {
-	RSVP.allSettled(metrics).then(function (results) {
-		logger.info('', results.length, 'sensors done in', new Date().getTime() - start, 'ms');
-	});
-}
-
-telldus.getSensors().then(telldus.getSensorInfos).then(graphite.logAll).then(printSummary);
+telldus.getSensors().then(telldus.getSensorInfos).then(graphite.logAll);
