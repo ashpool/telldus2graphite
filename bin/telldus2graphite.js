@@ -6,7 +6,7 @@ var RSVP = require('rsvp'),
 	home = require('./../lib/homepath'),
 	config = require(home.path() + '/.telldus2graphite/config.json'),
 	graphite = require('./../lib/graphite.js')(config),
-	logger = require('./../lib/logger').getLogger(__filename),
+	logger = require('log4js-extras')(config).getLogger(__filename),
 	start = new Date().getTime();
 
 RSVP.on('error', function (reason) {
