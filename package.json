@@ -1,6 +1,6 @@
 {
   "name": "telldus2graphite",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Fetches sensor values from Telldus Live and forwards them to Graphite",
   "author": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)",
   "main": "bin/telldus2graphite",
@@ -37,7 +37,7 @@
     "log4js": "^0.6.22",
     "log4js-extras": "git://github.com/ashpool/log4js-extras.git#v0.0.2",
     "rsvp": "^3.0.16",
-    "telldus-live-promise": "git://github.com/ashpool/telldus-live-promise.git#master"
+    "telldus-live-promise": "0.0.4"
   },
   "devDependencies": {
     "chai": "^1.10.0",
