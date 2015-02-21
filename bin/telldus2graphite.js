@@ -4,7 +4,8 @@
 var home = require('./../lib/homepath'),
 	config = require(home.path() + '/.telldus2graphite/config.json'),
 	graphite = require('./../lib/graphite.js')(config),
-	telldusClient = require('telldus-live-promise').Client(config),
-	telldus = require('telldus-live-promise').Telldus(telldusClient, config);
+	client = require('telldus-live-promise').Client(config),
+	sensors = require('telldus-live-promise').Sensors(client),
+	logger = require('log4js-extras')(config).getLogger(__filename);
 
-telldus.getSensors().then(telldus.getSensorInfos).then(graphite.logAll);
+sensors.getSensors().then(sensors.getSensorInfos).then(graphite.logAll).catch(logger.error);
