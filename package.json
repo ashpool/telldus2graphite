@@ -37,7 +37,7 @@
     "log4js": "^0.6.22",
     "log4js-extras": "git://github.com/ashpool/log4js-extras.git#v0.0.2",
     "rsvp": "^3.0.16",
-    "telldus-live-promise": "git://github.com/ashpool/telldus-live-promise.git#master"
+    "telldus-live-promise": "0.0.7"
   },
   "devDependencies": {
     "chai": "^1.10.0",
