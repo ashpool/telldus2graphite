@@ -12,15 +12,17 @@ _... will come out like this in Graphite_
 ![graphite](https://cloud.githubusercontent.com/assets/310634/6113906/ce7866ee-b09a-11e4-854d-5efff799efae.png)
 
 ## Install
-```
+```bash
 npm install telldus2graphite
 ```
 
 ## Setup
 
-``~/.telldus2graphite/config.json``
-
+```bash
+~/.telldus2graphite/config.json
 ```
+
+```Javascript
 {
   "telldusPublicKey": "...",
   "telldusPrivateKey": "...",
@@ -40,12 +42,12 @@ npm install telldus2graphite
 
 
 ## Usage
-```
+```bash
 crontab -e
 ```
 
 Add this line to update sensors every minute
-```
+```bash
 * * * * * node <path to>/telldus2graphite/node_modules/.bin/telldus2graphite
 ```
 
