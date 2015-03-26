@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "chai": "^1.10.0",
+    "chai-as-promised": "^4.3.0",
     "gulp": "^3.8.10",
     "gulp-coverage": "^0.3.34",
     "gulp-jshint": "^1.9.2",

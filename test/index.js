@@ -1,1 +1,2 @@
-require('./metric.js');
+require('./homepath');
+require('./metric');
