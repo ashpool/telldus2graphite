@@ -5,7 +5,7 @@ Fetches sensor values from Telldus Live and forwards them to Graphite.
 
 _Sensors in Telldus Live ..._
 
-![telldus](https://cloud.githubusercontent.com/assets/310634/6894513/d84c1712-d6d6-11e4-9f98-20dfbffeca46.png)
+![telldus](https://cloud.githubusercontent.com/assets/310634/6894530/0ba4f462-d6d7-11e4-8bf1-2e7449637ebc.png)
 
 _... will come out like this in Graphite_
 
