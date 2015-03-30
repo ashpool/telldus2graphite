@@ -9,20 +9,6 @@ describe('graphite', function () {
         graphite = require('./../lib/graphite.js')(config);
 
     describe('#_logSensorInfo', function () {
-        var si = {
-            id: '3152120',
-            clientName: 'home',
-            name: 'outdoor',
-            lastUpdated: 1427600042,
-            ignored: 0,
-            editable: 1,
-            data: [{name: 'temp', value: 1.6, scale: 0}],
-            protocol: 'fineoffset',
-            sensorId: 37,
-            timezoneoffset: 7200,
-            battery: 254,
-            keepHistory: 0
-        };
         it('rejects if sensorInfo is empty', function (done) {
             var sensorInfo;
             graphite._logSensorInfo(sensorInfo).should.eventually.be.rejectedWith('sensorInfo must not be empty').and.notify(done);
