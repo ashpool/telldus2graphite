@@ -46,8 +46,8 @@ describe('validator', function () {
             var undef;
             validator.isTimestamp(undef).should.equal(false);
         });
-        it('999999999999 is not a timestamp', function () {
-            validator.isTimestamp(1000000000000).should.equal(false);
+        it('999999999 is not a timestamp', function () {
+            validator.isTimestamp(999999999).should.equal(false);
         });
     });
 });
