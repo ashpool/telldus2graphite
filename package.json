@@ -32,7 +32,7 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "graphite-promise": "0.0.1",
+    "graphite-promise": "^0.0.2",
     "lodash": "^3.1.0",
     "log4js": "^0.6.22",
     "log4js-extras": "git://github.com/ashpool/log4js-extras.git#v0.0.2",
