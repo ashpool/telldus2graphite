@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Telldus2graphite by ashpool</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Telldus2graphite</h1>
+        <h2>Fetches sensor values from Telldus Live and forwards them to Graphite</h2>
+        <a href="https://github.com/ashpool/telldus2graphite" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="telldus2graphite" class="anchor" href="#telldus2graphite" aria-hidden="true"><span class="octicon octicon-link"></span></a>telldus2graphite</h1>
+
+<p>Fetches sensor values from Telldus Live and forwards them to Graphite.</p>
+
+<p><a href="https://npmjs.org/package/telldus2graphite"><img src="http://img.shields.io/npm/v/telldus2graphite.svg" alt="NPM version"></a> <a href="https://npmjs.org/package/telldus2graphite"><img src="http://img.shields.io/npm/dm/telldus2graphite.svg" alt="Downloads"></a> <a href="https://travis-ci.org/ashpool/telldus2graphite"><img src="http://img.shields.io/travis/ashpool/telldus2graphite.svg" alt="Build Status"></a></p>
+
+<p><em>Sensors in Telldus Live ...</em></p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/310634/6894530/0ba4f462-d6d7-11e4-8bf1-2e7449637ebc.png" alt="telldus"></p>
+
+<p><em>... will come out like this in Graphite</em></p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/310634/6894514/d84d433a-d6d6-11e4-9af2-12a10aa27934.png" alt="graphite"></p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<div class="highlight highlight-bash"><pre>npm install telldus2graphite</pre></div>
+
+<h2>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup</h2>
+
+<div class="highlight highlight-bash"><pre><span class="pl-k">~</span>/.telldus2graphite/config.json</pre></div>
+
+<div class="highlight highlight-Javascript"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>telldusPublicKey<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>...<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>telldusPrivateKey<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>...<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>telldusToken<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>...<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>telldusTokenSecret<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>...<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>graphiteUrl<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>plaintext://127.0.0.1:2003/<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>format<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>client.sensor.type<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>logLevel<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>INFO<span class="pl-pds">"</span></span>
+}
+</pre></div>
+
+<h3>
+<a id="formatting" class="anchor" href="#formatting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Formatting</h3>
+
+<ul>
+<li>
+<code>client.sensor.type =&gt; home.freezer.temp</code> (default)</li>
+<li><code>client.type.sensor =&gt; home.temp.freezer</code></li>
+<li><code>sensor.type =&gt; freezer.temp</code></li>
+</ul>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-bash"><pre>crontab -e</pre></div>
+
+<p>Add this line to update sensors every minute</p>
+
+<div class="highlight highlight-bash"><pre><span class="pl-k">*</span> <span class="pl-k">*</span> <span class="pl-k">*</span> <span class="pl-k">*</span> <span class="pl-k">*</span> node <span class="pl-k">&lt;</span>path to<span class="pl-k">&gt;</span>/telldus2graphite/node_modules/.bin/telldus2graphite</pre></div>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/ashpool/telldus2graphite/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/ashpool/telldus2graphite/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/ashpool/telldus2graphite"></a> is maintained by <a href="https://github.com/ashpool">ashpool</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
