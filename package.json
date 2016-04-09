@@ -1,6 +1,6 @@
 {
   "name": "telldus2graphite",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Fetches sensor values from Telldus Live and forwards them to Graphite",
   "author": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)",
   "main": "bin/telldus2graphite",
@@ -17,7 +17,7 @@
     "url": "git://github.com/ashpool/telldus2graphite.git"
   },
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">=4.6.2"
   },
   "keywords": [
     "telldus",
@@ -32,19 +32,20 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "graphite-promise": "^0.0.3",
-    "lodash": "^3.1.0",
+    "graphite-promise": "^0.1.0",
+    "lodash": "^4.9.0",
     "log4js": "^0.6.22",
     "log4js-extras": "git://github.com/ashpool/log4js-extras.git#v0.0.2",
-    "rsvp": "^3.0.16",
-    "telldus-live-promise": "^0.1.0"
+    "rsvp": "^3.2.1",
+    "telldus-live-promise": "^0.1.2"
   },
   "devDependencies": {
-    "chai": "^1.10.0",
-    "chai-as-promised": "^4.3.0",
-    "gulp": "^3.8.10",
-    "gulp-coverage": "^0.3.34",
-    "gulp-jshint": "^1.9.2",
-    "gulp-mocha": "^2.0.0"
+    "jshint": "^2.0.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "gulp": "^3.9.1",
+    "gulp-coverage": "^0.3.38",
+    "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^2.2.0"
   }
 }
