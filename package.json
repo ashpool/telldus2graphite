@@ -1,6 +1,6 @@
 {
   "name": "telldus2graphite",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Fetches sensor values from Telldus Live and forwards them to Graphite",
   "author": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)",
   "main": "bin/telldus2graphite",
