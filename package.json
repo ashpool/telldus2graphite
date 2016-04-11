@@ -1,14 +1,21 @@
 {
   "name": "telldus2graphite",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Fetches sensor values from Telldus Live and forwards them to Graphite",
-  "author": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)",
-  "main": "bin/telldus2graphite",
-  "preferGlobal": "true",
-  "directories": {
-    "bin": "./bin",
-    "lib": "./lib"
+  "keywords": [
+    "telldus",
+    "graphite"
+  ],
+  "homepage": "https://ashpool.github.io/telldus2graphite",
+  "bugs": {
+    "url": "https://github.com/ashpool/telldus2graphite/issues"
   },
+  "license": "MIT",
+  "author": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)",
+  "contributors": {
+    "name": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)"
+  },
+  "main": "bin/telldus2graphite",
   "bin": {
     "telldus2graphite": "./bin/telldus2graphite.js"
   },
@@ -16,28 +23,23 @@
     "type": "git",
     "url": "git://github.com/ashpool/telldus2graphite.git"
   },
-  "engines": {
-    "node": ">=4.6.2"
+  "directories": {
+    "bin": "./bin",
+    "lib": "./lib"
   },
-  "keywords": [
-    "telldus",
-    "graphite"
-  ],
-  "bugs": {
-    "url": "https://github.com/ashpool/telldus2graphite/issues"
-  },
-  "homepage": "https://ashpool.github.io/telldus2graphite",
-  "license": "MIT",
   "scripts": {
     "test": "gulp test"
   },
+  "preferGlobal": true,
+  "engines": {
+    "node": ">=4.6.2"
+  },
   "dependencies": {
-    "graphite-promise": "^0.1.0",
+    "graphite-promise": "^0.1.1",
     "lodash": "^4.9.0",
-    "log4js": "^0.6.22",
-    "log4js-extras": "git://github.com/ashpool/log4js-extras.git#v0.0.2",
+    "log4js": "^0.6.33",
     "rsvp": "^3.2.1",
-    "telldus-live-promise": "^0.1.2"
+    "telldus-live-promise": "^0.1.3"
   },
   "devDependencies": {
     "jshint": "^2.0.0",
