@@ -1,6 +1,6 @@
 {
   "name": "telldus2graphite",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "Fetches sensor values from Telldus Live and forwards them to Graphite",
   "keywords": [
     "telldus",
