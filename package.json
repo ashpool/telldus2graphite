@@ -35,9 +35,9 @@
     "node": ">=4.6.2"
   },
   "dependencies": {
-    "graphite-promise": "^0.1.2",
+    "graphite-promise": "^0.1.3",
     "log4js": "^0.6.33",
-    "telldus-live-promise": "^1.0.1"
+    "telldus-live-promise": "^1.0.3"
   },
   "devDependencies": {
     "jshint": "^2.0.0",
