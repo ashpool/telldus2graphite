@@ -17,22 +17,14 @@ npm install telldus2graphite
 ```
 
 ## Setup
-
+Environment variables
 ```bash
-~/.telldus2graphite/config.json
-```
-
-```Javascript
-{
-  "telldusPublicKey": "...",
-  "telldusPrivateKey": "...",
-  "telldusToken": "...",
-  "telldusTokenSecret": "...",
-  "graphiteUrl": "plaintext://127.0.0.1:2003/",
-  "format": "client.sensor.type",
-  "logLevel": "INFO"
-}
-
+telldusPublicKey= ...
+telldusPrivateKey=...
+telldusToken=...
+telldusTokenSecret:...
+graphiteUrl=plaintext://127.0.0.1:2003/
+format=client.sensor.type
 ```
 
 ### Formatting
