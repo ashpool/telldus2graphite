@@ -19,12 +19,13 @@ npm install telldus2graphite
 ## Setup
 Environment variables
 ```bash
-telldusPublicKey= ...
+format=client.sensor.type
+hostedGraphiteKey=... (optional)
 telldusPrivateKey=...
+telldusPublicKey= ...
 telldusToken=...
 telldusTokenSecret:...
-graphiteUrl=plaintext://127.0.0.1:2003/
-format=client.sensor.type
+url=plaintext://127.0.0.1:2003/
 ```
 
 ### Formatting
