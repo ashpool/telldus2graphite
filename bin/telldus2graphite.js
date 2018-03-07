@@ -1,6 +1,7 @@
 /*
  Typically invoked by cron.
  */
+require('dotenv').load();
 const config = process.env;
 const graphite = require('./../lib/graphite.js')(config);
 const telldus = require('telldus-live-promise');
