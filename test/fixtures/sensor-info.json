@@ -1,0 +1,19 @@
+{
+  "id": "2813567",
+  "clientName": "Hemma",
+  "name": "temperature.firstfloor",
+  "lastUpdated": 1423447479,
+  "ignored": 0,
+  "editable": 1,
+  "data": [
+    {
+      "name": "temp",
+      "value": "20.8",
+      "scale": "0"
+    }
+  ],
+  "protocol": "fineoffset",
+  "sensorId": "66",
+  "timezoneoffset": 3600,
+  "battery": "254"
+}
