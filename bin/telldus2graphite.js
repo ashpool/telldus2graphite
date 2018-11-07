@@ -1,7 +1,10 @@
 /*
  Typically invoked by cron.
  */
-require('dotenv').load();
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').load();
+}
 const config = process.env;
 const graphite = require('./../lib/graphite.js')(config);
 const telldus = require('telldus-live-promise');
@@ -15,7 +18,7 @@ function read(list) {
 }
 
 function log(list) {
-  Promise.all(list).then(graphite.logAll).catch(console.error);
+  Promise.all(list).then(graphite.logAll).then(console.log).catch(console.error);
 }
 
 sensors.list().then(read).then(log);
