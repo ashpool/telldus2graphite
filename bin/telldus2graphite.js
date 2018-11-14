@@ -18,7 +18,10 @@ function read(list) {
 }
 
 function log(list) {
-  Promise.all(list).then(graphite.logAll).then(console.log).catch(console.error);
+  Promise.all(list).then(graphite.logAll).then((res) => {
+    graphite.end();
+    console.log(res);
+  }).catch(console.error);
 }
 
 sensors.list().then(read).then(log);
