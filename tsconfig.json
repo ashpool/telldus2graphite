@@ -5,7 +5,7 @@
     "forceConsistentCasingInFileNames": true,
     "module": "commonjs",
     "outDir": "./build",
-    "strict": false,
+    "strict": true,
     "target": "es6"
   },
   "include": [
