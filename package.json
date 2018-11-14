@@ -30,6 +30,8 @@
     "lib": "./lib"
   },
   "scripts": {
+    "build": "tsc",
+    "eslint:fix": "eslint **/*.ts --fix",
     "test": "mocha"
   },
   "preferGlobal": true,
@@ -42,8 +44,24 @@
     "telldus-live-promise": "^1.2.2"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.4",
+    "ajv": "^6.5.5",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^5.2.0"
+    "eslint": "^5.9.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-typescript": "^0.13.0",
+    "mocha": "^5.2.0",
+    "prettier": "^1.15.1",
+    "ts-mocha": "^2.0.0",
+    "ts-mockito": "^2.3.1",
+    "typesafe": "^0.9.8",
+    "typescript": "^3.1.6",
+    "typescript-eslint-parser": "^20.1.1",
+    "typescript-tools": "^0.3.1"
   }
 }
