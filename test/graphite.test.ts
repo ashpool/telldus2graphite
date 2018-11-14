@@ -6,7 +6,7 @@ chai.use(chaiAsPromised);
 
 describe('graphite', () => {
   const config = {};
-  const graphite = require('./../lib/graphite.js')(config);
+  const graphite = require('./../lib/graphite')(config);
 
   describe('#_logSensorInfo', () => {
     it('rejects if sensorInfo is empty', (done) => {
