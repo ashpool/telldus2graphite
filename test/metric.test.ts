@@ -1,10 +1,11 @@
-/*jshint undef:false */
-var chai = require('chai'),
-  expect = chai.expect;
+import chaiAsPromised from 'chai-as-promised';
+import * as chai from "chai";
 
-describe('metric', function() {
+chai.should();
+chai.use(chaiAsPromised);
 
-  var metric = require('../lib/metric.js'),
+describe('metric', () => {
+  const metric = require('../lib/metric.js'),
     sensorInfo = {
       id: '2813567',
       clientName: 'home',
@@ -22,33 +23,37 @@ describe('metric', function() {
       sensorId: '66',
       timezoneoffset: 3600,
       battery: '254'
-    },
-    data = {
+    };
+    const data = {
       name: 'temp',
       value: '20.8',
       scale: '0'
     };
 
-  describe('#create', function() {
-    it('client.sensor.type', function() {
-      var m = metric('client.sensor.type').create(sensorInfo, data);
-      expect(m.home.firstfloor.temp).to.equal(20.8);
+  describe('#create', () => {
+    it('client.sensor.type', () => {
+      const m = metric('client.sensor.type').create(sensorInfo, data);
+      m.home.firstfloor.temp.should.equal(20.8);
     });
-    it('client.type.sensor', function() {
-      var m = metric('client.type.sensor').create(sensorInfo, data);
-      expect(m.home.temp.firstfloor).to.equal(20.8);
+
+    it('client.type.sensor', () => {
+      const m = metric('client.type.sensor').create(sensorInfo, data);
+      m.home.temp.firstfloor.should.equal(20.8);
     });
-    it('sensor.type', function() {
-      var m = metric('sensor.type').create(sensorInfo, data);
-      expect(m.firstfloor.temp).to.equal(20.8);
+
+    it('sensor.type', () => {
+      const m = metric('sensor.type').create(sensorInfo, data);
+      m.firstfloor.temp.should.equal(20.8);
     });
-    it('type', function() {
-      var m = metric('type').create(sensorInfo, data);
-      expect(m.temp).to.equal(20.8);
+
+    it('type', () => {
+      const m = metric('type').create(sensorInfo, data);
+      m.temp.should.equal(20.8);
     });
-    it('formatString can be empty - will default to home.firstfloor.temp', function() {
-      var m = metric().create(sensorInfo, data);
-      expect(m.home.firstfloor.temp).to.equal(20.8);
+
+    it('formatString can be empty - will default to home.firstfloor.temp', () => {
+      const m = metric().create(sensorInfo, data);
+      m.home.firstfloor.temp.should.equal(20.8);
     });
   });
 });
