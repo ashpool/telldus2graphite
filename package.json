@@ -32,7 +32,14 @@
   "scripts": {
     "build": "tsc",
     "eslint:fix": "eslint **/*.ts --fix",
-    "test": "mocha"
+    "test": "eslint **/*.ts && mocha -r ts-node/register test/**/*test.ts",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,md,json,d.ts}": [
+      "npm run prettier",
+      "git add"
+    ]
   },
   "preferGlobal": true,
   "engines": {
