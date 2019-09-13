@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "outDir": "./build",
+    "strict": true,
+    "target": "es6"
+  },
+  "include": [
+    "lib/**/*"
+  ]
+}

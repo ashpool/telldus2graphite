@@ -3,10 +3,10 @@
  */
 
 if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').load();
+  require('dotenv').config();
 }
 const config = process.env;
-const graphite = require('./../lib/graphite.js')(config);
+const graphite = require('./../build/graphite')(config);
 const telldus = require('telldus-live-promise');
 const api = telldus.API(config);
 const sensors = telldus.Sensors(api);
@@ -18,7 +18,10 @@ function read(list) {
 }
 
 function log(list) {
-  Promise.all(list).then(graphite.logAll).then(console.log).catch(console.error);
+  Promise.all(list).then(graphite.logAll).then((res) => {
+    graphite.end();
+    console.log(res);
+  }).catch(console.error);
 }
 
 sensors.list().then(read).then(log);

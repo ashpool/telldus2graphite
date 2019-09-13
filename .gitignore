@@ -1,9 +1,6 @@
-.idea
-config.json
-node_modules/
-.idea/
-.coverdata/
-.coverrun
-debug/
-reports/
 .env
+.idea
+build
+debug/
+node_modules/
+reports/
