@@ -5,7 +5,7 @@ chai.should();
 chai.use(chaiAsPromised);
 
 describe('metric', () => {
-  const metric = require('../lib/metric.js'),
+  const metric = require('../lib/metric'),
     sensorInfo = {
       id: '2813567',
       clientName: 'home',

@@ -34,7 +34,7 @@ module.exports = function(config: Record<string, string>) {
         return logMetric(m, ts);
       });
       return Promise.all(promises).then((metric) => {
-        resolve(metric);
+        return resolve(metric);
       }, (error: Error) => {
         reject(error);
       });
