@@ -1,7 +1,8 @@
 # telldus2graphite
 Fetches sensor values from Telldus Live and forwards them to Graphite.
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Actions Status](https://github.com/ashpool/telldus2graphite/workflows/Node.js%20Package/badge.svg)](https://github.com/ashpool/telldus2graphite/actions) [![Actions Status](https://github.com/ashpool/telldus2graphite/workflows/Node%20CI/badge.svg)](https://github.com/ashpool/telldus2graphite/actions)
+
 
 _Sensors in Telldus Live ..._
 
@@ -47,5 +48,3 @@ Add this line to update sensors every minute
 [npm-url]: https://npmjs.org/package/telldus2graphite
 [downloads-image]: http://img.shields.io/npm/dm/telldus2graphite.svg
 [npm-image]: http://img.shields.io/npm/v/telldus2graphite.svg
-[travis-url]: https://travis-ci.org/ashpool/telldus2graphite
-[travis-image]: http://img.shields.io/travis/ashpool/telldus2graphite.svg
