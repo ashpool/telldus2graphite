@@ -47,8 +47,8 @@
   },
   "dependencies": {
     "dotenv": "^8.1.0",
-    "graphite-promise": "2.0.9",
-    "telldus-live-promise": "^1.2.2"
+    "graphite-promise": "2.0.10",
+    "telldus-live-promise": "^2.0.1"
   },
   "devDependencies": {
     "@types/chai": "^4.2.2",
