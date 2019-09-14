@@ -1,6 +1,6 @@
 {
   "name": "telldus2graphite",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Fetches sensor values from Telldus Live and forwards it to Graphite",
   "keywords": [
     "telldus",
@@ -22,7 +22,8 @@
     "telldus2graphite": "./bin/telldus2graphite.js"
   },
   "files": [
-    "build", "bin"
+    "build",
+    "bin"
   ],
   "repository": {
     "type": "git",
@@ -46,7 +47,7 @@
   },
   "dependencies": {
     "dotenv": "^8.1.0",
-    "graphite-promise": "2.0.10",
+    "graphite-promise": "2.0.12",
     "telldus-live-promise": "^2.0.1"
   },
   "devDependencies": {

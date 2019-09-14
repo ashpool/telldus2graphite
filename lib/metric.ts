@@ -1,4 +1,4 @@
-module.exports = function(formatString: string) {
+export default function(formatString?: string) {
   const formatArray: string[] = (formatString || 'client.sensor.type').split('.');
 
   function create(sensorInfo: Record<string, any>, data: Record<string, any>) {

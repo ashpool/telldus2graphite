@@ -1,19 +1,23 @@
 import chaiAsPromised from 'chai-as-promised';
 import * as chai from "chai";
+import Graphite from './../lib/graphite';
+import {Config} from "../lib/types";
 
 chai.should();
 chai.use(chaiAsPromised);
 
 describe('graphite', () => {
-  const config = {};
-  const graphite = require('./../lib/graphite')(config);
+  const config = {} as Config;
+  const graphite = Graphite(config);
 
   describe('#_logSensorInfo', () => {
     it('rejects if sensorInfo is empty', (done) => {
+      // @ts-ignore
       graphite._logSensorInfo(undefined).should.eventually.be.rejectedWith('sensorInfo must not be empty').and.notify(done);
     });
 
     it('rejects if sensorInfo is null', (done) => {
+      // @ts-ignore
       graphite._logSensorInfo(null).should.eventually.be.rejectedWith('sensorInfo must not be empty').and.notify(done);
     });
 

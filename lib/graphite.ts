@@ -1,10 +1,12 @@
 // @ts-ignore
 import {GraphiteClient} from 'graphite-promise';
 import validator from './validator';
+import {Config} from "./types";
+import Metric from './metric';
 
-module.exports = function(config: Record<string, string>) {
-  const metric = require('./metric')(config.format);
-  const client = config.client || new GraphiteClient(config);
+export default function(config: Config) {
+  const metric = Metric(config.format);
+  const client = new GraphiteClient(config);
 
   function logMetric(metric: Record<string, any>, timestamp: number) {
     return client.write(metric, timestamp);
@@ -29,8 +31,8 @@ module.exports = function(config: Record<string, string>) {
         if (!validator.isNumber(data.value)) {
           return reject(new Error('data must have a numeric value'));
         }
-        const m = metric.create(sensorInfo, data),
-          ts = (sensorInfo.lastUpdated * 1000) + sensorInfo.timezoneoffset || 0;
+        const m = metric.create(sensorInfo, data);
+        const ts = (sensorInfo.lastUpdated * 1000) + sensorInfo.timezoneoffset || 0;
         return logMetric(m, ts);
       });
       return Promise.all(promises).then((metric) => {
