@@ -1,6 +1,6 @@
 {
   "name": "telldus2graphite",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Fetches sensor values from Telldus Live and forwards it to Graphite",
   "keywords": [
     "telldus",
@@ -21,13 +21,12 @@
   "bin": {
     "telldus2graphite": "./bin/telldus2graphite.js"
   },
+  "files": [
+    "build", "bin"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/ashpool/telldus2graphite.git"
-  },
-  "directories": {
-    "bin": "./bin",
-    "lib": "./lib"
   },
   "scripts": {
     "build": "tsc",
