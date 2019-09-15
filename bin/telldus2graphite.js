@@ -1,11 +1,17 @@
 /*
- Typically invoked by cron.
+ Typically invoked by cron
  */
-
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
-const config = process.env;
+const config = {
+  telldusPublicKey: process.env.telldusPublicKey,
+  telldusPrivateKey: process.env.telldusPrivateKey,
+  telldusToken: process.env.telldusToken,
+  telldusTokenSecret: process.env.telldusTokenSecret,
+  url: process.env.url,
+  format: process.env.format
+};
 const graphite = require('./../build/graphite')(config);
 const telldus = require('telldus-live-promise');
 const api = telldus.API(config);

@@ -4,7 +4,7 @@ import validator from './validator';
 import {Config} from "./types";
 import Metric from './metric';
 
-export default function(config: Config) {
+module.exports = function(config: Config) {
   const metric = Metric(config.format);
   const client = new GraphiteClient(config);
 
