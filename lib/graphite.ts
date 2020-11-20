@@ -1,8 +1,8 @@
 // @ts-ignore
 import {GraphiteClient} from 'graphite-promise';
-import validator from './validator';
 import {Config} from "./types";
 import Metric from './metric';
+import {isNumber, isTimestamp} from "./validator";
 
 module.exports = function(config: Config) {
   const metric = Metric(config.format);
@@ -20,7 +20,7 @@ module.exports = function(config: Config) {
       if (!sensorInfo.name) {
         return reject(new Error('sensorInfo must have a name'));
       }
-      if (!validator.isTimestamp(sensorInfo.lastUpdated)) {
+      if (!isTimestamp(sensorInfo.lastUpdated)) {
         return reject(new Error('lastUpdated is not a timestamp'));
       }
       // @ts-ignore
@@ -28,7 +28,7 @@ module.exports = function(config: Config) {
         if (!data.name) {
           return reject(new Error('data must have a name'));
         }
-        if (!validator.isNumber(data.value)) {
+        if (!isNumber(data.value)) {
           return reject(new Error('data must have a numeric value'));
         }
         const m = metric.create(sensorInfo, data);
