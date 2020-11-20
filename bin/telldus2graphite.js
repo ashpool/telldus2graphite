@@ -14,8 +14,8 @@ const config = {
 };
 const graphite = require('./../build/graphite')(config);
 const telldus = require('telldus-live-promise');
-const api = new telldus.Telldus(config);
-const sensors = new telldus.Sensors(api);
+const api = telldus.API(config);
+const sensors = telldus.Sensors(api);
 
 const read = (list) => list.sensor.filter(sensor => sensor.id !== undefined).map(sensors.info);
 
