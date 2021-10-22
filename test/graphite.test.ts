@@ -1,30 +1,23 @@
-import chaiAsPromised from 'chai-as-promised';
-import * as chai from "chai";
 import {Config} from "../lib/types";
-
-chai.should();
-chai.use(chaiAsPromised);
 
 describe('graphite', () => {
   const config = {} as Config;
   const graphite = require('./../lib/graphite')(config);
 
   describe('#_logSensorInfo', () => {
-    it('rejects if sensorInfo is empty', (done) => {
-      // @ts-ignore
-      graphite._logSensorInfo(undefined).should.eventually.be.rejectedWith('sensorInfo must not be empty').and.notify(done);
+    it('rejects if sensorInfo is empty', () => {
+      expect(graphite._logSensorInfo(undefined)).rejects.toEqual('sensorInfo must not be empty');
     });
 
-    it('rejects if sensorInfo is null', (done) => {
-      // @ts-ignore
-      graphite._logSensorInfo(null).should.eventually.be.rejectedWith('sensorInfo must not be empty').and.notify(done);
+    it('rejects if sensorInfo is null', () => {
+      expect(graphite._logSensorInfo(null)).rejects.toEqual('sensorInfo must not be empty');
     });
 
-    it('rejects if sensorInfo has no name', (done) => {
-      graphite._logSensorInfo({}).should.eventually.be.rejectedWith('sensorInfo must have a name').and.notify(done);
+    it('rejects if sensorInfo has no name', () => {
+      expect(graphite._logSensorInfo({})).rejects.toEqual('sensorInfo must have a name');
     });
 
-    it('rejects if sensorInfo.data[0] has no name', (done) => {
+    it('rejects if sensorInfo.data[0] has no name', () => {
       const sensorInfo = {
         id: '3152120',
         clientName: 'home',
@@ -32,10 +25,10 @@ describe('graphite', () => {
         name: 'outdoor',
         data: [{value: 1.6, scale: 0}]
       };
-      graphite._logSensorInfo(sensorInfo).should.eventually.be.rejectedWith('data must have a name').and.notify(done);
+      expect(graphite._logSensorInfo(sensorInfo)).rejects.toEqual('data must have a name');
     });
 
-    it('rejects if sensorInfo.data[0] has no value', (done) => {
+    it('rejects if sensorInfo.data[0] has no value', () => {
       const sensorInfo = {
         id: '3152120',
         clientName: 'home',
@@ -43,10 +36,10 @@ describe('graphite', () => {
         name: 'outdoor',
         data: [{name: 'temp', value: 'not a numeric value', scale: 0}]
       };
-      graphite._logSensorInfo(sensorInfo).should.eventually.be.rejectedWith('data must have a numeric value').and.notify(done);
+      expect(graphite._logSensorInfo(sensorInfo)).rejects.toEqual('data must have a numeric value');
     });
 
-    it('rejects if timestamp is invalid', (done) => {
+    it('rejects if timestamp is invalid', () => {
       const sensorInfo = {
         id: '3152120',
         clientName: 'home',
@@ -61,7 +54,7 @@ describe('graphite', () => {
         battery: 254,
         keepHistory: 0
       };
-      graphite._logSensorInfo(sensorInfo).should.eventually.be.rejectedWith('lastUpdated is not a timestamp').and.notify(done);
+      expect(graphite._logSensorInfo(sensorInfo)).rejects.toEqual('lastUpdated is not a timestamp');
     });
   });
 });

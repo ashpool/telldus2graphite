@@ -1,6 +1,7 @@
 .env
 .idea
-build
+build/
+coverage/
 debug/
 node_modules/
 reports/
